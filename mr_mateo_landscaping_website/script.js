@@ -2,20 +2,67 @@
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("open");
+function setMenuOpen(isOpen) {
+  navLinks.classList.toggle("open", isOpen);
   menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.textContent = isOpen ? "×" : "☰";
+  menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+}
+
+menuToggle.addEventListener("click", () => {
+  setMenuOpen(!navLinks.classList.contains("open"));
 });
 
 // Cerrar el menú al seleccionar una sección
 document.querySelectorAll("#navLinks a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.textContent = "☰";
-  });
+  link.addEventListener("click", () => setMenuOpen(false));
 });
+
+// Cerrar el menú con Escape o al tocar fuera de él
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && navLinks.classList.contains("open")) {
+    setMenuOpen(false);
+    menuToggle.focus();
+  }
+});
+
+document.addEventListener("click", (event) => {
+  if (navLinks.classList.contains("open") && !navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+    setMenuOpen(false);
+  }
+});
+
+// Resaltar el enlace de la sección visible
+const sectionLinks = new Map(
+  [...document.querySelectorAll(".nav-links > .nav-link, .services-menu > .nav-link")]
+    .map((link) => [link.getAttribute("href").slice(1), link])
+);
+
+function setActiveLink(id) {
+  sectionLinks.forEach((link, linkId) => {
+    const isActive = linkId === id;
+    link.classList.toggle("active", isActive);
+    if (isActive) link.setAttribute("aria-current", "true");
+    else link.removeAttribute("aria-current");
+  });
+}
+
+const observedSections = ["servicios", "nosotros", "perfil", "cotizacion", "contacto"]
+  .map((id) => document.getElementById(id))
+  .filter(Boolean);
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) setActiveLink(entry.target.id);
+    });
+  },
+  { rootMargin: "-45% 0px -50% 0px" }
+);
+observedSections.forEach((section) => sectionObserver.observe(section));
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY < 200) setActiveLink("inicio");
+}, { passive: true });
 
 // Año automático en el footer
 document.getElementById("year").textContent = new Date().getFullYear();
