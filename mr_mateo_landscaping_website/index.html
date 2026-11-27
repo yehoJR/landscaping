@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mr. Mateo Landscaping</title>
+  <title>Mr. Mateo Landscaping | Jardinería y paisajismo en Morristown, TN</title>
+  <meta name="description" content="Mr. Mateo Landscaping: corte de césped, paisajismo, desmalezado y poda de árboles en Morristown, Tennessee y alrededores. Solicita tu cotización gratis.">
+  <meta name="theme-color" content="#052b17">
+  <link rel="icon" href="assets/logo-mr-mateo-green.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,16 +20,19 @@
       <span>MR. MATEO <strong>Landscaping</strong></span>
     </a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+      <svg class="icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
 
-    <nav class="nav-links" id="navLinks">
-      <a class="nav-link active" href="#inicio">Menú</a>
+    <nav class="nav-links" id="navLinks" aria-label="Principal">
+      <a class="nav-link active" href="#inicio" aria-current="true">Inicio</a>
       <a class="nav-link" href="#cotizacion">Cotización</a>
       <a class="nav-link" href="#contacto">Contacto</a>
-      <a class="nav-link" href="#nosotros">About Us</a>
+      <a class="nav-link" href="#nosotros">Nosotros</a>
       <a class="nav-link" href="#perfil">Perfil</a>
       <div class="services-menu">
-        <a class="nav-link" href="#servicios">Servicios <span aria-hidden="true">⌄</span></a>
+        <a class="nav-link" href="#servicios">Servicios <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
         <div class="dropdown">
           <a href="#servicios">Corte de césped</a>
           <a href="#servicios">Paisajismo</a>
@@ -59,17 +68,19 @@
         <p>Soluciones para mantener tu jardín limpio, saludable y atractivo.</p>
       </div>
       <div class="service-grid">
-        <article class="service-card"><div class="service-icon">✂</div><h3>Mantenimiento de césped</h3><p>Corte y cuidado regular para un césped limpio y uniforme.</p></article>
-        <article class="service-card"><div class="service-icon">🌳</div><h3>Paisajismo y diseño</h3><p>Mejoramos la apariencia de tus espacios exteriores.</p></article>
-        <article class="service-card"><div class="service-icon">▱</div><h3>Corte de césped</h3><p>Servicio de corte para patios y propiedades residenciales.</p></article>
-        <article class="service-card"><div class="service-icon">🌿</div><h3>Desmalezado</h3><p>Retiro de maleza y limpieza de áreas verdes.</p></article>
-        <article class="service-card"><div class="service-icon">🌲</div><h3>Poda de árboles</h3><p>Cuidado de árboles y arbustos para mantenerlos en forma.</p></article>
-        <article class="service-card"><div class="service-icon">🍃</div><h3>Limpieza exterior</h3><p>Ayudamos a que tu jardín se vea ordenado y bien cuidado.</p></article>
+        <article class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg></div><h3>Mantenimiento de césped</h3><p>Corte y cuidado regular para un césped limpio y uniforme.</p></article>
+        <article class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z"/><path d="M7 16v6"/><path d="M13 19v3"/><path d="M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L13 3l-1.4 1.5"/></svg></div><h3>Paisajismo y diseño</h3><p>Mejoramos la apariencia de tus espacios exteriores.</p></article>
+        <article class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg></div><h3>Corte de césped</h3><p>Servicio de corte para patios y propiedades residenciales.</p></article>
+        <article class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div><h3>Desmalezado</h3><p>Retiro de maleza y limpieza de áreas verdes.</p></article>
+        <article class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg></div><h3>Poda de árboles</h3><p>Cuidado de árboles y arbustos para mantenerlos en forma.</p></article>
+        <article class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2z"/><path d="M19 15v4M17 17h4"/><path d="M5 17v3M3.5 18.5h3"/></svg></div><h3>Limpieza exterior</h3><p>Ayudamos a que tu jardín se vea ordenado y bien cuidado.</p></article>
       </div>
     </section>
 
     <section class="about-section" id="nosotros">
-      <div class="about-photo" role="img" aria-label="Jardín verde y equipo de jardinería"></div>
+      <div class="about-photo">
+        <img src="assets/logo-mr-mateo-black.jpeg" alt="Emblema de Mr. Mateo Landscaping con podadora, árbol y desbrozadora" loading="lazy">
+      </div>
       <div class="about-copy">
         <p class="eyebrow">MR. MATEO LANDSCAPING</p>
         <h2>Un jardín bien cuidado hace la diferencia.</h2>
@@ -119,9 +130,9 @@
     <section class="contact-section" id="contacto">
       <div><p class="eyebrow">ESTAMOS PARA AYUDARTE</p><h2>¿Listo para mejorar tu jardín?</h2><p>Comunícate con Mr. Mateo Landscaping para hablar de tu próximo proyecto.</p></div>
       <div class="contact-details">
-        <p><span>⌖</span> Morristown, Tennessee y alrededores</p>
-        <p><span>☎</span> Agrega aquí tu número de teléfono</p>
-        <p><span>✉</span> Agrega aquí tu correo electrónico</p>
+        <p><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Morristown, Tennessee y alrededores</p>
+        <p><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Agrega aquí tu número de teléfono</p>
+        <p><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Agrega aquí tu correo electrónico</p>
       </div>
     </section>
   </main>
